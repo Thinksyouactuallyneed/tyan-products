@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TYAN - Thinks You Actually Need</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Lato', sans-serif;
-      background: linear-gradient(135deg, #004080, #66ccff);
-      color: white;
+      font-family: 'Rubik', sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
-      background-color: rgba(0, 0, 51, 0.8);
-      position: sticky;
-      top: 0;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
     }
 
     header h1 {
-      font-size: 1.1rem;
       margin: 0;
+      font-size: 1.7rem;
+      color: #111;
     }
 
-   .category {
-  padding: 30px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-.category h2 {
-  color: #1C2A39;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+    .category {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
 
-    .product {
+    .category:hover {
+      transform: translateY(-5px);
+    }
+
+    .category h2 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 1.4rem;
       margin-bottom: 15px;
     }
 
-    .product a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.1em;
+    .product {
+      margin-bottom: 10px;
     }
 
-    .product p {
-      margin: 5px 0 0 0;
-      font-size: 0.9em;
-      color: #e0e0e0;
+    .product a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #0066cc;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+
+    .product a:hover {
+      color: #003366;
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: rgba(0, 0, 51, 0.8);
+      background-color: #ffffff;
       font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 0.9rem;
-      }
-
-      .product a {
-        font-size: 1em;
-      }
+      color: #666;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -81,178 +85,90 @@
     <h1>TYAN – Thinks You Actually Need</h1>
   </header>
 
-  <!-- CATEGORIA: GIARDINAGGIO -->
-  <div class="category">
-    <h2>🌿 Giardinaggio</h2>
-     <div class="product">
-      <a href="https://amzn.to/4jJv2sB" target="_blank">Set da 12 attrezzi da giardinaggio</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/4ddbMS2" target="_blank">3 Sacchi Giardinaggio Pieghevole </a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/4iOzAwv" target="_blank">Grembiule da Giardinaggio con tasche porta utensili</a>
-    </div>
-  </div>
-  
-<!-- CATEGORIA: ANIMALI -->
-  <div class="category">
-    <h2> 🐕🐈Animali</h2>
-     <div class="product">
-      <a href="https://amzn.to/4maITK7" target="_blank">Borraccia per Cani Portatile</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/3F4iAVk" target="_blank">Porticina per Gatti</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/44yf8fX" target="_blank">Piscina per cani grandi e piccoli</a>
-    </div>
-  </div>
-   <!-- CATEGORIA: ESTATE 2025 -->
-  <div class="category">
-    <h2> ☀️🏖️Estate 2025</h2>
-     <div class="product">
-      <a href="https://amzn.to/4iN9WIx" target="_blank">Borsa da Spiaggia con scomparto termico</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/44YC9c4" target="_blank">Coperta da Spiaggia Impermeabile anti sabbia</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/3F2c15x" target="_blank">Zaino da Viaggio per le compagnie aeree low-cos</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/3F3N7T6" target="_blank">Asciugamano da bagno magnetico</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4dbUYux" target="_blank">Borraccia Termica con LED Temperatura Coperchio</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/43cQBef" target="_blank">Pesa Valigia da Viaggio</a>
-    </div>
-  </div>
+  <main class="container">
+    <!-- CATEGORIE -->
 
-  <!-- CATEGORIA: BEAUTY -->
-  <div class="category">
-    <h2>💄✨Beauty</h2>
-     <div class="product">
-      <a href="https://amzn.to/4m4qtuB" target="_blank">Boccette ricaricabili per profumo 5 ml</a>
+    <div class="category">
+      <h2>🌿 Giardinaggio</h2>
+      <div class="product"><a href="https://amzn.to/4jJv2sB" target="_blank">Set da 12 attrezzi da giardinaggio</a></div>
+      <div class="product"><a href="https://amzn.to/4ddbMS2" target="_blank">3 Sacchi Giardinaggio Pieghevoli</a></div>
+      <div class="product"><a href="https://amzn.to/4iOzAwv" target="_blank">Grembiule da Giardinaggio</a></div>
     </div>
-     <div class="product">
-      <a href="https://amzn.to/4iWr3I7" target="_blank">Specchio Ingranditore 10X</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/4k0w2Iy" target="_blank">Polvere per capelli per volume</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/44rm0f7" target="_blank">Leggings "TikTok" Seasum con push up</a>
-    </div>
-  </div>
-  
-  <!-- CATEGORIA: SPORT -->
-  <div class="category">
-    <h2>⚾🏀🏐⚽🎾 Sport</h2>
-    <div class="product">
-      <a href="https://amzn.to/4d2uqeZ" target="_blank">Borraccia Da  2L con Indicatore del Tempo</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/44tCS53" target="_blank">Fasce elastiche per esercizi</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4iJRdgY" target="_blank"> 3 Paia grip socks</a>
-    </div>
-    
-    <div class="product">
-      <a href="https://amzn.to/44qBDna" target="_blank"> Zaino da calcio per ragazzi con scomparto per pallon</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/3Yuhski" target="_blank"> Sacca Palloni con la tracolla</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4d6pSV6" target="_blank"> Banda Elastica per L’Allenamento Individuale con Cintura Regolabile </a>
-    </div>
-  </div>
 
-  <!-- CATEGORIA: CUCINA -->
-  <div class="category">
-    <h2>🍳 Cucina</h2>
-    <div class="product">
-      <a href="https://amzn.to/3Z1BwdU" target="_blank">fazzoletti scottex</a>
+    <div class="category">
+      <h2>🐕🐈 Animali</h2>
+      <div class="product"><a href="https://amzn.to/4maITK7" target="_blank">Borraccia per Cani Portatile</a></div>
+      <div class="product"><a href="https://amzn.to/3F4iAVk" target="_blank">Porticina per Gatti</a></div>
+      <div class="product"><a href="https://amzn.to/44yf8fX" target="_blank">Piscina per Cani</a></div>
     </div>
-    <div class="product">
-      <a href="https://amzn.to/4k28RNY" target="_blank">Contenitori per Frigorifero con Rete di Drenaggio</a>
-    </div>
-     <div class="product">
-      <a href="https://amzn.to/4miMQg7" target="_blank">Supporto per taglieri e coperchio</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/3GGRjZx" target="_blank">Contenitori ermetici per dispensa</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4jGKlSZ" target="_blank">Timer magnetico da cucina digitale</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/44zmHDg" target="_blank">Scrubber per i piatti elettrico</a>
-    </div>
-  </div>
-  
-  <!-- CATEGORIA: ACCESSORI UTILI -->
-  <div class="category">
-    <h2> 🎒 Accessori Utili</h2>
-    <div class="product">
-      <a href="https://amzn.to/44Uozq5" target="_blank">Organizzatore per cavi da scrivania  </a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/42ZVs2b" target="_blank">Luce notturna LED con sensore di movimento</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/42Zo2AE" target="_blank">Mini pattumiera da tavolo per scrivania o auto </a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/42ZZEPo" target="_blank">Gancio pieghevole da parete per borse o cappotti</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/3GBpCkI" target="_blank">Scatole pieghevoli per armadi</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/43drGIq" target="_blank">Scaffali doccia ad angolo</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4k0uTk6" target="_blank">Portaoggetti Da Appendere alla porta</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4d1NVV8" target="_blank">Sacchetti Sottovuoto Vestiti con Pompa Elettrica salva spazio</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/3EVRvUk" target="_blank">Lampada Da Comodino RGB Con magsafe</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/4jKdMU4" target="_blank">Lavagna Cancellabile Calendario Planning Settimanale</a>
-    </div>
-    <div class="product">
-      <a href="https://amzn.to/454oSi8" target="_blank">Grucce appendiabiti salvaspazio</a>
-    </div>
-  </div>
 
-  <!-- CATEGORIA: TECH -->
-  <div class="category">
-    <h2>💻 Tech</h2>
-    <div class="product">
-      <a href="https://amzn.to/4iMqosK" target="_blank">PTHTECHUS Smartwatch Bambini con Musica MP3</a>
+    <div class="category">
+      <h2>☀️🏖️ Estate 2025</h2>
+      <div class="product"><a href="https://amzn.to/4iN9WIx" target="_blank">Borsa da Spiaggia con scomparto termico</a></div>
+      <div class="product"><a href="https://amzn.to/44YC9c4" target="_blank">Coperta da Spiaggia Impermeabile</a></div>
+      <div class="product"><a href="https://amzn.to/3F2c15x" target="_blank">Zaino da Viaggio low-cost</a></div>
+      <div class="product"><a href="https://amzn.to/3F3N7T6" target="_blank">Asciugamano da bagno magnetico</a></div>
+      <div class="product"><a href="https://amzn.to/4dbUYux" target="_blank">Borraccia Termica con LED</a></div>
+      <div class="product"><a href="https://amzn.to/43cQBef" target="_blank">Pesa Valigia</a></div>
     </div>
-    <div class="product">
-      <a href="https://amzn.to/3GEbaIJ" target="_blank">Anello di Scorrimento per TIK Tok</a>
+
+    <div class="category">
+      <h2>💄✨ Beauty</h2>
+      <div class="product"><a href="https://amzn.to/4m4qtuB" target="_blank">Boccette ricaricabili per profumo</a></div>
+      <div class="product"><a href="https://amzn.to/4iWr3I7" target="_blank">Specchio Ingranditore 10X</a></div>
+      <div class="product"><a href="https://amzn.to/4k0w2Iy" target="_blank">Polvere per capelli</a></div>
+      <div class="product"><a href="https://amzn.to/44rm0f7" target="_blank">Leggings "TikTok" push up</a></div>
     </div>
-    <div class="product">
-      <a href="https://amzn.to/3Z2M4cT" target="_blank">NEEWER Treppiede Video</a>
+
+    <div class="category">
+      <h2>⚽🏀🏐 Sport</h2>
+      <div class="product"><a href="https://amzn.to/4d2uqeZ" target="_blank">Borraccia 2L con indicatore</a></div>
+      <div class="product"><a href="https://amzn.to/44tCS53" target="_blank">Fasce elastiche fitness</a></div>
+      <div class="product"><a href="https://amzn.to/4iJRdgY" target="_blank">Grip socks</a></div>
+      <div class="product"><a href="https://amzn.to/44qBDna" target="_blank">Zaino da calcio</a></div>
+      <div class="product"><a href="https://amzn.to/3Yuhski" target="_blank">Sacca palloni</a></div>
+      <div class="product"><a href="https://amzn.to/4d6pSV6" target="_blank">Banda elastica per allenamento</a></div>
     </div>
-    <div class="product">
-      <a href="https://amzn.to/3YBGPkh" target="_blank">Distributore e Mescolatore di Carte</a>
+
+    <div class="category">
+      <h2>🍳 Cucina</h2>
+      <div class="product"><a href="https://amzn.to/3Z1BwdU" target="_blank">Fazzoletti Scottex</a></div>
+      <div class="product"><a href="https://amzn.to/4k28RNY" target="_blank">Contenitori per Frigorifero</a></div>
+      <div class="product"><a href="https://amzn.to/4miMQg7" target="_blank">Supporto per taglieri</a></div>
+      <div class="product"><a href="https://amzn.to/3GGRjZx" target="_blank">Contenitori ermetici dispensa</a></div>
+      <div class="product"><a href="https://amzn.to/4jGKlSZ" target="_blank">Timer da cucina digitale</a></div>
+      <div class="product"><a href="https://amzn.to/44zmHDg" target="_blank">Scrubber piatti elettrico</a></div>
     </div>
-  </div>
+
+    <div class="category">
+      <h2>🎒 Accessori Utili</h2>
+      <div class="product"><a href="https://amzn.to/44Uozq5" target="_blank">Organizzatore cavi da scrivania</a></div>
+      <div class="product"><a href="https://amzn.to/42ZVs2b" target="_blank">Luce notturna LED</a></div>
+      <div class="product"><a href="https://amzn.to/42Zo2AE" target="_blank">Mini pattumiera da tavolo</a></div>
+      <div class="product"><a href="https://amzn.to/42ZZEPo" target="_blank">Gancio pieghevole da parete</a></div>
+      <div class="product"><a href="https://amzn.to/3GBpCkI" target="_blank">Scatole pieghevoli per armadio</a></div>
+      <div class="product"><a href="https://amzn.to/43drGIq" target="_blank">Scaffali doccia ad angolo</a></div>
+      <div class="product"><a href="https://amzn.to/4k0uTk6" target="_blank">Portaoggetti da appendere</a></div>
+      <div class="product"><a href="https://amzn.to/4d1NVV8" target="_blank">Sacchetti sottovuoto con pompa</a></div>
+      <div class="product"><a href="https://amzn.to/3EVRvUk" target="_blank">Lampada da comodino RGB</a></div>
+      <div class="product"><a href="https://amzn.to/4jKdMU4" target="_blank">Lavagna settimanale cancellabile</a></div>
+      <div class="product"><a href="https://amzn.to/454oSi8" target="_blank">Grucce salvaspazio</a></div>
+    </div>
+
+    <div class="category">
+      <h2>💻 Tech</h2>
+      <div class="product"><a href="https://amzn.to/4iMqosK" target="_blank">Smartwatch Bambini MP3</a></div>
+      <div class="product"><a href="https://amzn.to/3GEbaIJ" target="_blank">Anello per scroll TikTok</a></div>
+      <div class="product"><a href="https://amzn.to/3Z2M4cT" target="_blank">Treppiede NEEWER</a></div>
+      <div class="product"><a href="https://amzn.to/3YBGPkh" target="_blank">Distributore carte da gioco</a></div>
+    </div>
+  </main>
 
   <footer>
     © 2025 TYAN – Thinks You Actually Need
   </footer>
+</body>
+</html>
 
 </body>
 </html>
