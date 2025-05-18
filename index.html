@@ -338,3 +338,21 @@
   </div>
 </div>
 
+</main>
+
+  <footer>
+    &copy; 2025 TYAN – Thinks You Actually Need
+  </footer>
+
+  <script>
+    // Funzione per aprire/chiudere le categorie cliccando sull'header
+    document.querySelectorAll('.category-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const category = header.parentElement;
+        category.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
+
