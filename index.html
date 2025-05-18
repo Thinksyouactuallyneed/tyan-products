@@ -2,19 +2,19 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TYAN - Thinks You Actually Need</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
       font-family: 'Rubik', sans-serif;
-      background-color: #f2f4f8;
+      margin: 0;
+      background: #f2f4f8;
       color: #333;
     }
 
     header {
-      background-color: #ffffff;
+      background: #fff;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       text-align: center;
@@ -26,146 +26,315 @@
       color: #111;
     }
 
-    .container {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
     }
 
+    /* Accordion category styles */
     .category {
-      background-color: #fff;
+      background: #fff;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
-    }
-
-    .category:hover {
-      transform: translateY(-5px);
-    }
-
-    .category h2 {
-      margin-top: 0;
-      color: #004080;
-      font-size: 1.4rem;
       margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      overflow: hidden;
     }
 
+    .category-header {
+      cursor: pointer;
+      padding: 15px 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #004080;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .category-header:hover {
+      background: #e6f0ff;
+    }
+
+    .category-header .arrow {
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    .category.open .category-header .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* Products list */
+    .products {
+      display: none;
+      padding: 10px 20px 20px 20px;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      gap: 15px;
+      background: #fafafa;
+      border-top: 1px solid #ddd;
+    }
+
+    .category.open .products {
+      display: grid;
+    }
+
+    /* Single product */
     .product {
-      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .product:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #eee;
+      flex-shrink: 0;
     }
 
     .product a {
-      text-decoration: none;
-      font-weight: 500;
       color: #0066cc;
-      display: inline-block;
-      transition: color 0.2s;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
     }
 
     .product a:hover {
-      color: #003366;
       text-decoration: underline;
+      color: #003366;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #ffffff;
-      font-size: 0.9em;
+      background: #fff;
+      font-size: 0.9rem;
       color: #666;
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>TYAN – Thinks You Actually Need</h1>
   </header>
 
-  <main class="container">
-    <!-- CATEGORIE -->
-
+  <main>
+    <!-- Categoria esempio -->
     <div class="category">
-      <h2>🌿 Giardinaggio</h2>
-      <div class="product"><a href="https://amzn.to/4jJv2sB" target="_blank">Set da 12 attrezzi da giardinaggio</a></div>
-      <div class="product"><a href="https://amzn.to/4ddbMS2" target="_blank">3 Sacchi Giardinaggio Pieghevoli</a></div>
-      <div class="product"><a href="https://amzn.to/4iOzAwv" target="_blank">Grembiule da Giardinaggio</a></div>
+      <div class="category-header">
+        🌿 Giardinaggio
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61+ZcoD+qxL._AC_SL1500_.jpg" alt="Set da 12 attrezzi da giardinaggio" />
+          <a href="https://amzn.to/4jJv2sB" target="_blank" rel="noopener noreferrer">Set da 12 attrezzi da giardinaggio</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71O07NTaQPL._AC_SL1500_.jpg" alt="3 Sacchi Giardinaggio Pieghevoli" />
+          <a href="https://amzn.to/4ddbMS2" target="_blank" rel="noopener noreferrer">3 Sacchi Giardinaggio Pieghevoli</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71vpxYs-67L._AC_SL1500_.jpg" alt="Grembiule da Giardinaggio" />
+          <a href="https://amzn.to/4iOzAwv" target="_blank" rel="noopener noreferrer">Grembiule da Giardinaggio</a>
+        </div>
+      </div>
     </div>
 
     <div class="category">
-      <h2>🐕🐈 Animali</h2>
-      <div class="product"><a href="https://amzn.to/4maITK7" target="_blank">Borraccia per Cani Portatile</a></div>
-      <div class="product"><a href="https://amzn.to/3F4iAVk" target="_blank">Porticina per Gatti</a></div>
-      <div class="product"><a href="https://amzn.to/44yf8fX" target="_blank">Piscina per Cani</a></div>
+      <div class="category-header">
+        🐕🐈 Animali
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71GlXTxD65L._AC_SL1500_.jpg" alt="Borraccia per Cani Portatile" />
+          <a href="https://amzn.to/4maITK7" target="_blank" rel="noopener noreferrer">Borraccia per Cani Portatile</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71fUdr+J8hL._AC_SL1500_.jpg" alt="Porticina per Gatti" />
+          <a href="https://amzn.to/3F4iAVk" target="_blank" rel="noopener noreferrer">Porticina per Gatti</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81rEjZhP3tL._AC_SL1500_.jpg" alt="Piscina per Cani" />
+          <a href="https://amzn.to/44yf8fX" target="_blank" rel="noopener noreferrer">Piscina per Cani</a>
+        </div>
+      </div>
     </div>
 
     <div class="category">
-      <h2>☀️🏖️ Estate 2025</h2>
-      <div class="product"><a href="https://amzn.to/4iN9WIx" target="_blank">Borsa da Spiaggia con scomparto termico</a></div>
-      <div class="product"><a href="https://amzn.to/44YC9c4" target="_blank">Coperta da Spiaggia Impermeabile</a></div>
-      <div class="product"><a href="https://amzn.to/3F2c15x" target="_blank">Zaino da Viaggio low-cost</a></div>
-      <div class="product"><a href="https://amzn.to/3F3N7T6" target="_blank">Asciugamano da bagno magnetico</a></div>
-      <div class="product"><a href="https://amzn.to/4dbUYux" target="_blank">Borraccia Termica con LED</a></div>
-      <div class="product"><a href="https://amzn.to/43cQBef" target="_blank">Pesa Valigia</a></div>
+      <div class="category-header">
+        ☀️🏖️ Estate 2025
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81fEsXxBLRL._AC_SL1500_.jpg" alt="Borsa da Spiaggia con scomparto termico" />
+          <a href="https://amzn.to/4iN9WIx" target="_blank" rel="noopener noreferrer">Borsa da Spiaggia con scomparto termico</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/91cGklxqAoL._AC_SL1500_.jpg" alt="Coperta da Spiaggia Impermeabile" />
+          <a href="https://amzn.to/44YC9c4" target="_blank" rel="noopener noreferrer">Coperta da Spiaggia Impermeabile</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61OZ6EImEDL._AC_SL1500_.jpg" alt="Zaino da Viaggio low-cost" />
+          <a href="https://amzn.to/3F2c15x" target="_blank" rel="noopener noreferrer">Zaino da Viaggio low-cost</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61Y1ZlT40bL._AC_SL1500_.jpg" alt="Asciugamano da bagno magnetico" />
+          <a href="https://amzn.to/3F3N7T6" target="_blank" rel="noopener noreferrer">Asciugamano da bagno magnetico</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71y78pD0hhL._AC_SL1500_.jpg" alt="Borraccia Termica con LED" />
+          <a href="https://amzn.to/4dbUYux" target="_blank" rel="noopener noreferrer">Borraccia Termica con LED</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71t7vKOrkjL._AC_SL1500_.jpg" alt="Pesa Valigia" />
+          <a href="https://amzn.to/43cQBef" target="_blank" rel="noopener noreferrer">Pesa Valigia</a>
+        </div>
+      </div>
     </div>
 
     <div class="category">
-      <h2>💄✨ Beauty</h2>
-      <div class="product"><a href="https://amzn.to/4m4qtuB" target="_blank">Boccette ricaricabili per profumo</a></div>
-      <div class="product"><a href="https://amzn.to/4iWr3I7" target="_blank">Specchio Ingranditore 10X</a></div>
-      <div class="product"><a href="https://amzn.to/4k0w2Iy" target="_blank">Polvere per capelli</a></div>
-      <div class="product"><a href="https://amzn.to/44rm0f7" target="_blank">Leggings "TikTok" push up</a></div>
+      <div class="category-header">
+        💄✨ Beauty
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61kn+Z2y8pL._AC_SL1500_.jpg" alt="Boccette ricaricabili per profumo" />
+          <a href="https://amzn.to/4m4qtuB" target="_blank" rel="noopener noreferrer">Boccette ricaricabili per profumo</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61fpdTTpkBL._AC_SL1500_.jpg" alt="Specchio Ingranditore 10X" />
+          <a href="https://amzn.to/4iWr3I7" target="_blank" rel="noopener noreferrer">Specchio Ingranditore 10X</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61x7gVwDKRL._AC_SL1500_.jpg" alt="Polvere per capelli" />
+          <a href="https://amzn.to/4k0w2Iy" target="_blank" rel="noopener noreferrer">Polvere per capelli</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71zN6+MSFNL._AC_SL1500_.jpg" alt="Leggings 'TikTok' push up" />
+          <a href="https://amzn.to/44rm0f7" target="_blank" rel="noopener noreferrer">Leggings "TikTok" push up</a>
+        </div>
+      </div>
     </div>
 
     <div class="category">
-      <h2>⚽🏀🏐 Sport</h2>
-      <div class="product"><a href="https://amzn.to/4d2uqeZ" target="_blank">Borraccia 2L con indicatore</a></div>
-      <div class="product"><a href="https://amzn.to/44tCS53" target="_blank">Fasce elastiche fitness</a></div>
-      <div class="product"><a href="https://amzn.to/4iJRdgY" target="_blank">Grip socks</a></div>
-      <div class="product"><a href="https://amzn.to/44qBDna" target="_blank">Zaino da calcio</a></div>
-      <div class="product"><a href="https://amzn.to/3Yuhski" target="_blank">Sacca palloni</a></div>
-      <div class="product"><a href="https://amzn.to/4d6pSV6" target="_blank">Banda elastica per allenamento</a></div>
+      <div class="category-header">
+        ⚽🏀🏐 Sport
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61nkmceNpSL._AC_SL1500_.jpg" alt="Borraccia 2L con indicatore" />
+          <a href="https://amzn.to/4d2uqeZ" target="_blank" rel="noopener noreferrer">Borraccia 2L con indicatore</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71PFG62bn6L._AC_SL1500_.jpg" alt="Fasce elastiche fitness" />
+          <a href="https://amzn.to/44tCS53" target="_blank" rel="noopener noreferrer">Fasce elastiche fitness</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61vdNp0L6qL._AC_SL1500_.jpg" alt="Grip socks" />
+          <a href="https://amzn.to/4iJRdgY" target="_blank" rel="noopener noreferrer">Grip socks</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71+dwl2tz6L._AC_SL1500_.jpg" alt="Zaino da calcio" />
+          <a href="https://amzn.to/44qBDna" target="_blank" rel="noopener noreferrer">Zaino da calcio</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71p3KmaADRL._AC_SL1500_.jpg" alt="Sacca palloni" />
+          <a href="https://amzn.to/3Yuhski" target="_blank" rel="noopener noreferrer">Sacca palloni</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61-vF6oyhBL._AC_SL1500_.jpg" alt="Banda elastica per allenamento" />
+          <a href="https://amzn.to/4d6pSV6" target="_blank" rel="noopener noreferrer">Banda elastica per allenamento</a>
+        </div>
+      </div>
     </div>
-
     <div class="category">
-      <h2>🍳 Cucina</h2>
-      <div class="product"><a href="https://amzn.to/3Z1BwdU" target="_blank">Fazzoletti Scottex</a></div>
-      <div class="product"><a href="https://amzn.to/4k28RNY" target="_blank">Contenitori per Frigorifero</a></div>
-      <div class="product"><a href="https://amzn.to/4miMQg7" target="_blank">Supporto per taglieri</a></div>
-      <div class="product"><a href="https://amzn.to/3GGRjZx" target="_blank">Contenitori ermetici dispensa</a></div>
-      <div class="product"><a href="https://amzn.to/4jGKlSZ" target="_blank">Timer da cucina digitale</a></div>
-      <div class="product"><a href="https://amzn.to/44zmHDg" target="_blank">Scrubber piatti elettrico</a></div>
+      <div class="category-header">
+        🍳 Cucina
+        <span class="arrow">▶</span>
+      </div>
+      <div class="products">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81OSVXX5VaL._AC_SL1500_.jpg" alt="Fazzoletti Scottex" />
+          <a href="https://amzn.to/3Z1BwdU" target="_blank" rel="noopener noreferrer">Fazzoletti Scottex</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61qvy+W9EOL._AC_SL1500_.jpg" alt="Contenitori per Frigorifero" />
+          <a href="https://amzn.to/4k28RNY" target="_blank" rel="noopener noreferrer">Contenitori per Frigorifero</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61vYhxQcY8L._AC_SL1500_.jpg" alt="Supporto per taglieri" />
+          <a href="https://amzn.to/4miMQg7" target="_blank" rel="noopener noreferrer">Supporto per taglieri</a>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71-DNpoTUWL._AC_SL1500_.jpg" alt="Contenitori ermetici dispensa" />
+          <a href="https://amzn.to/3GGRjZx" target="_blank" rel="noopener noreferrer">Contenitori ermetici dispensa</a>
+        </div>
+        <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61AODC0Gz4L._AC_SL1500_.jpg" alt="Accessori cucina multifunzione" />
+      <a href="https://amzn.to/4iPWH5f" target="_blank" rel="noopener noreferrer">Accessori cucina multifunzione</a>
     </div>
+  </div>
+</div>
 
-    <div class="category">
-      <h2>🎒 Accessori Utili</h2>
-      <div class="product"><a href="https://amzn.to/44Uozq5" target="_blank">Organizzatore cavi da scrivania</a></div>
-      <div class="product"><a href="https://amzn.to/42ZVs2b" target="_blank">Luce notturna LED</a></div>
-      <div class="product"><a href="https://amzn.to/42Zo2AE" target="_blank">Mini pattumiera da tavolo</a></div>
-      <div class="product"><a href="https://amzn.to/42ZZEPo" target="_blank">Gancio pieghevole da parete</a></div>
-      <div class="product"><a href="https://amzn.to/3GBpCkI" target="_blank">Scatole pieghevoli per armadio</a></div>
-      <div class="product"><a href="https://amzn.to/43drGIq" target="_blank">Scaffali doccia ad angolo</a></div>
-      <div class="product"><a href="https://amzn.to/4k0uTk6" target="_blank">Portaoggetti da appendere</a></div>
-      <div class="product"><a href="https://amzn.to/4d1NVV8" target="_blank">Sacchetti sottovuoto con pompa</a></div>
-      <div class="product"><a href="https://amzn.to/3EVRvUk" target="_blank">Lampada da comodino RGB</a></div>
-      <div class="product"><a href="https://amzn.to/4jKdMU4" target="_blank">Lavagna settimanale cancellabile</a></div>
-      <div class="product"><a href="https://amzn.to/454oSi8" target="_blank">Grucce salvaspazio</a></div>
+<div class="category">
+  <div class="category-header">
+    🧳 Viaggi
+    <span class="arrow">▶</span>
+  </div>
+  <div class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71UNJjrhV9L._AC_SL1500_.jpg" alt="Organizzatore da viaggio" />
+      <a href="https://amzn.to/3Yq2qBx" target="_blank" rel="noopener noreferrer">Organizzatore da viaggio</a>
     </div>
-
-    <div class="category">
-      <h2>💻 Tech</h2>
-      <div class="product"><a href="https://amzn.to/4iMqosK" target="_blank">Smartwatch Bambini MP3</a></div>
-      <div class="product"><a href="https://amzn.to/3GEbaIJ" target="_blank">Anello per scroll TikTok</a></div>
-      <div class="product"><a href="https://amzn.to/3Z2M4cT" target="_blank">Treppiede NEEWER</a></div>
-      <div class="product"><a href="https://amzn.to/3YBGPkh" target="_blank">Distributore carte da gioco</a></div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71Y0q8DW7DL._AC_SL1500_.jpg" alt="Set di bottiglie da viaggio" />
+      <a href="https://amzn.to/4jI0HJG" target="_blank" rel="noopener noreferrer">Set di bottiglie da viaggio</a>
     </div>
-  </main>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/51gwcfmsNCL._AC_SL1500_.jpg" alt="Sacchetto da lavaggio" />
+      <a href="https://amzn.to/4k07zJ0" target="_blank" rel="noopener noreferrer">Sacchetto da lavaggio</a>
+    </div>
+  </div>
+</div>
 
-  <footer>
-    © 2025 TYAN – Thinks You Actually Need
-  </footer>
-</body>
-</html>
+<div class="category">
+  <div class="category-header">
+    🎮 Tech & Gadget
+    <span class="arrow">▶</span>
+  </div>
+  <div class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61OfU7rn1qL._AC_SL1500_.jpg" alt="Caricabatterie wireless" />
+      <a href="https://amzn.to/4iNJ7rv" target="_blank" rel="noopener noreferrer">Caricabatterie wireless</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61yP3ah2hXL._AC_SL1500_.jpg" alt="Mini speaker Bluetooth" />
+      <a href="https://amzn.to/4mdbPUP" target="_blank" rel="noopener noreferrer">Mini speaker Bluetooth</a>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61o-QegU4hL._AC_SL1500_.jpg" alt="Smartwatch sportivo" />
+      <a href="https://amzn.to/3GId5tG" target="_blank" rel="noopener noreferrer">Smartwatch sportivo</a>
+    </div>
+  </div>
+</div>
+
